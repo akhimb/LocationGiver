@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocationGiver.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Label
+                Text="2CONNECT - VEHICLE ENTRY"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to to connect UI"
+                FontSize="18"
+                HorizontalOptions="Center" />
+            <Grid HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300*"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                <ImageButton x:Name="editImageButton" Margin="10" Clicked="editImageButton_Clicked" VerticalOptions="Start" Grid.Column="1">
+                    <ImageButton.Source>
+                        <FontImageSource FontFamily="FARegular" Glyph="{StaticResource edit}" Color="DodgerBlue" Size="24"/>
+                    </ImageButton.Source>
+                </ImageButton>
+                <StackLayout x:Name="editBox"  Grid.Column="0">
+                    <Button x:Name="selectProfileButton"  Text="Select a Profile Picture" Clicked="OnSelectImageClicked" />
+                    <Image x:Name="profilePic" WidthRequest="150" HeightRequest="150"/>
+                    <Entry x:Name="nameTextBox" Placeholder="Enter your name" />
+                    <Entry x:Name="numberTextBox" Placeholder="Enter your mobile number" />
+                    <Button
+                x:Name="SaveBtn"
+                Text="Save"
+                Clicked="SaveButton_Clicked"
+                HorizontalOptions="Center" />
+                </StackLayout>
+            </Grid>
+            <HorizontalStackLayout x:Name="actionLayout" HorizontalOptions="Center">
+                <Button
+                x:Name="StartButton"
+                Text="Start"
+                Clicked="StartButton_Clicked"
+                HorizontalOptions="Center" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
